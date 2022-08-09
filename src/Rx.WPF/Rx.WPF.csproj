@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
+	<UseWPF>true</UseWPF>
+	<Nullable>enable</Nullable>
+	<RootNamespace>System.Reactive</RootNamespace>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<IsTrimmable>true</IsTrimmable>
+	<TrimMode>link</TrimMode>
+	<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<IsPackable>true</IsPackable>
+	<Authors>ScarletKuro</Authors>
+	<Description>WPF extensions for System.Reactive</Description>
+	<RepositoryUrl>https://github.com/ScarletKuro/Make_Rx_Great_Again</RepositoryUrl>
+	<PackageTags>Rx, Reactive, Extensions, Observable, LINQ, WPF</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+	<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="5.0.0">
+      <SetTargetFramework>TargetFramework=net5.0</SetTargetFramework>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Windows\Strings_WindowsThreading.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Strings_WindowsThreading.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Windows\Strings_WindowsThreading.resx">
+      <CustomToolNamespace>System.Reactive</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings_WindowsThreading.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
