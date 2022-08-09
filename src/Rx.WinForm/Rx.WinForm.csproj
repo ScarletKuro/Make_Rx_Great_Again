@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	<TargetFrameworks>net5.0-windows;net6.0-windows</TargetFrameworks>
+	<UseWindowsForms>true</UseWindowsForms>
+	<Nullable>enable</Nullable>
+	<RootNamespace>System.Reactive</RootNamespace>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<IsTrimmable>true</IsTrimmable>
+	<TrimMode>link</TrimMode>
+	<EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<IsPackable>true</IsPackable>
+	<Authors>ScarletKuro</Authors>
+	<Description>WinForm extensions for System.Reactive</Description>
+	<RepositoryUrl>https://github.com/ScarletKuro/Make_Rx_Great_Again</RepositoryUrl>
+	<PackageTags>Rx, Reactive, Extensions, Observable, LINQ, WinForm</PackageTags>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+	<PublishRepositoryUrl>true</PublishRepositoryUrl>
+	<EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<IncludeSymbols>true</IncludeSymbols>
+	<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+	<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup> 
+
+  <ItemGroup>
+    <PackageReference Include="System.Reactive" Version="5.0.0">
+      <SetTargetFramework>TargetFramework=net5.0</SetTargetFramework>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
